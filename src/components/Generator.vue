@@ -35,6 +35,10 @@ export default class Generator extends Vue {
     "leave work early",
     "listen to Joan & Jericha",
     "have a chicken legend",
+    "do a crossword",
+    "watch cheer",
+    "have an extra hot oat milk cappucino",
+    "watch love island",
   ];
 
   private reasons: string[] = [
