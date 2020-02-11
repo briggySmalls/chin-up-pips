@@ -11,7 +11,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 export default class IndexedList extends Vue {
   @Prop private options!: string[];
 
-  private index: int = 0;
+  private index = 0;
 
   get selected() {
     return this.$attrs.options[this.index];
