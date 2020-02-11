@@ -19,7 +19,7 @@ export default class IndexedList extends Vue {
 
   shuffle() {
     // Get random integer
-    this.index = Math.round(Math.random() * this.$attrs.options.length);
+    this.index = Math.floor(Math.random() * this.$attrs.options.length);
   }
 }
 </script>
