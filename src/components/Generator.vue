@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Chin up pips!</h1>
+    <h1>Chin up Pips!</h1>
     <IndexedList class="item" ref="activity-item" :options="activities" />
     <p>
       because
@@ -26,11 +26,13 @@ import IndexedList from './IndexedList.vue';
 })
 export default class Generator extends Vue {
   private activities: string[] = [
-    "have a cup of earl grey tea.",
+    "have a cup of earl grey tea",
     "go for a walk",
     "listen to Aretha",
     "have a ginger shot",
     "go for a walk",
+    "buy yourself a pastry",
+    "leave work early",
   ];
 
   private reasons: string[] = [
@@ -40,6 +42,8 @@ export default class Generator extends Vue {
     "you give great feedback",
     "you inspire confidence",
     "you manage expectations like no other",
+    "you've just been promoted",
+    "you exercise regularly",
   ];
 
   shuffle(): void {
