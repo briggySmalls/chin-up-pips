@@ -24,7 +24,7 @@ import IndexedList from './IndexedList.vue';
     IndexedList,
   },
 })
-export default class HelloWorld extends Vue {
+export default class Generator extends Vue {
   private activities: string[] = [
     "have a cup of earl grey tea.",
     "go for a walk",
