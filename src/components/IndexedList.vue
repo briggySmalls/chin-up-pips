@@ -14,12 +14,12 @@ export default class IndexedList extends Vue {
   private index = 0;
 
   get selected() {
-    return this.$attrs.options[this.index];
+    return this.options[this.index];
   }
 
   shuffle() {
     // Get random integer
-    this.index = Math.floor(Math.random() * this.$attrs.options.length);
+    this.index = Math.floor(Math.random() * this.options.length);
   }
 }
 </script>
