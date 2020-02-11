@@ -20,13 +20,16 @@ export default class App extends Vue {}
 </script>
 
 <style lang="scss">
+$background-color: #39424e;
+$foreground-color: #ccc;
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #ccc;
-  background-color: #39424e;
+  color: $foreground-color;
+  background-color: $background-color;
 
   position: absolute;
   top: 0;
@@ -36,7 +39,7 @@ export default class App extends Vue {}
 }
 
 a {
-  color: #ccc;
+  color: $foreground-color;
 }
 
 #generator {
@@ -50,5 +53,22 @@ a {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+  padding: 1em 0;
+}
+
+button {
+  border-radius: 5em;
+  border: 3px solid $foreground-color;
+  color: $foreground-color;
+  background-color: $background-color;
+  overflow: hidden;
+  padding: 1em 1em;
+  font-weight: bold;
+  font-size: 1.1em;
+  cursor: pointer;
+
+  &:hover {
+    background-color: lighten($background-color, 10%);
+  }
 }
 </style>

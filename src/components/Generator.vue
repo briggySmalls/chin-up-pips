@@ -9,7 +9,7 @@
     <p>
       you got this x
     </p>
-    <button @click="shuffle">
+    <button id="shuffle" @click="shuffle">
       Give me another
     </button>
   </div>
@@ -61,5 +61,8 @@ h1 {
 }
 .item {
   font-size: 2em;
+}
+#shuffle {
+  margin-top: 3em;
 }
 </style>
