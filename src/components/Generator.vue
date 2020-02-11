@@ -18,6 +18,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import IndexedList from './IndexedList.vue';
+import * as data from '../data/data.json';
 
 @Component({
   components: {
@@ -25,35 +26,15 @@ import IndexedList from './IndexedList.vue';
   },
 })
 export default class Generator extends Vue {
-  private activities: string[] = [
-    "have a cup of earl grey tea",
-    "go for a walk",
-    "listen to Aretha",
-    "have a ginger shot",
-    "go for a walk",
-    "buy yourself a pastry",
-    "leave work early",
-    "listen to Joan & Jericha",
-    "have a chicken legend",
-    "do a crossword",
-    "watch cheer",
-    "have an extra hot oat milk cappucino",
-    "watch love island",
-  ];
+  private activities: string[];
+  private reasons: string[];
 
-  private reasons: string[] = [
-    "you are beautiful",
-    "you work really hard",
-    "your laugh lights up a room",
-    "you give great feedback",
-    "you inspire confidence",
-    "you manage expectations like no other",
-    "you've just been promoted",
-    "you exercise regularly",
-    "you are hot af",
-    "you are extraordinary",
-    "you only applied to one uni",
-  ];
+  constructor() {
+    super();
+    // Load the data from the json file
+    this.activities = data.activities;
+    this.reasons = data.reasons;
+  }
 
   shuffle(): void {
     // Randomly update
