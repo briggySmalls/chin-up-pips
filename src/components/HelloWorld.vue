@@ -1,11 +1,11 @@
 <template>
   <div>
     <h1>Chin up pips!</h1>
-    <IndexedList ref="activity-item" :options="activities" />
+    <IndexedList class="item" ref="activity-item" :options="activities" />
     <p>
       because
     </p>
-    <IndexedList ref="reason-item" :options="reasons" />
+    <IndexedList class="item" ref="reason-item" :options="reasons" />
     <p>
       you got this x
     </p>
@@ -36,13 +36,17 @@ export default class HelloWorld extends Vue {
   private reasons: string[] = [
     "you are beautiful",
     "you work really hard",
+    "your laugh lights up a room",
+    "you give great feedback",
+    "you inspire confidence",
+    "you manage expectations like no other",
   ];
 
   shuffle(): void {
-    console.log("hi");
     // Randomly update
-    this.$refs['activity-item'].shuffle();
-    this.$refs['reason-item'].shuffle();
+    for (const el of this.$el.querySelectorAll(".item")) {
+      el.__vue__.shuffle();
+    }
   }
 }
 </script>
@@ -52,15 +56,7 @@ export default class HelloWorld extends Vue {
 h3 {
   margin: 40px 0 0;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+.item {
+  font-size: 2em;
 }
 </style>
