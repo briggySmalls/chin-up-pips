@@ -33,6 +33,8 @@ export default class Generator extends Vue {
     "go for a walk",
     "buy yourself a pastry",
     "leave work early",
+    "listen to Joan & Jericha",
+    "have a chicken legend",
   ];
 
   private reasons: string[] = [
@@ -44,6 +46,7 @@ export default class Generator extends Vue {
     "you manage expectations like no other",
     "you've just been promoted",
     "you exercise regularly",
+    "you are hot af",
   ];
 
   shuffle(): void {
