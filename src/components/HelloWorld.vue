@@ -44,9 +44,8 @@ export default class HelloWorld extends Vue {
 
   shuffle(): void {
     // Randomly update
-    for (const el of this.$el.querySelectorAll(".item")) {
-      el.__vue__.shuffle();
-    }
+    (this.$refs['activity-item'] as IndexedList).shuffle();
+    (this.$refs['reason-item'] as IndexedList).shuffle();
   }
 }
 </script>
