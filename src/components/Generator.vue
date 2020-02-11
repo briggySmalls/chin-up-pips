@@ -51,6 +51,8 @@ export default class Generator extends Vue {
     "you've just been promoted",
     "you exercise regularly",
     "you are hot af",
+    "you are extraordinary",
+    "you only applied to one uni",
   ];
 
   shuffle(): void {
