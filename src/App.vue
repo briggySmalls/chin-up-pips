@@ -23,13 +23,16 @@ export default class App extends Vue {}
 $background-color: #39424e;
 $foreground-color: #ccc;
 
+body {
+  background-color: $background-color;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: $foreground-color;
-  background-color: $background-color;
 
   position: absolute;
   top: 0;
