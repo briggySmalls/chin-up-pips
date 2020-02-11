@@ -9,7 +9,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
 export default class IndexedList extends Vue {
-  @Prop private options!: string[];
+  @Prop() private options!: string[];
 
   private index = 0;
 
