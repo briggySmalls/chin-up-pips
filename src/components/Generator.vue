@@ -70,6 +70,6 @@ h1 {
   font-size: 2em;
 }
 #shuffle {
-  margin-top: 3em;
+  margin-top: 1em;
 }
 </style>

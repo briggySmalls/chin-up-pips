@@ -42,18 +42,8 @@ a {
   color: $foreground-color;
 }
 
-#generator {
-  top: 50%;
-  position: relative;
-  transform: translateY(-50%);
-}
-
 #footer {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 1em 0;
+  margin-top: 5em;
 }
 
 button {
