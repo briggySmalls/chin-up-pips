@@ -2,11 +2,11 @@
   <div id="app">
     <div>
       <h1>Chin up Pips!</h1>
-      <IndexedList class="item" ref="activity-item" :options="activities" />
+      <TextCarousel class="item" ref="activity-item" :options="activities" />
       <p>
         because
       </p>
-      <IndexedList class="item" ref="reason-item" :options="reasons" />
+      <TextCarousel class="item" ref="reason-item" :options="reasons" />
       <p>
         you got this x
       </p>
@@ -22,12 +22,12 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import IndexedList from './components/IndexedList.vue';
+import TextCarousel from './components/TextCarousel.vue';
 import * as data from './data/data.json';
 
 @Component({
   components: {
-    IndexedList,
+    TextCarousel,
   },
 })
 export default class App extends Vue {
@@ -43,8 +43,8 @@ export default class App extends Vue {
 
   shuffle(): void {
     // Randomly update
-    (this.$refs['activity-item'] as IndexedList).shuffle();
-    (this.$refs['reason-item'] as IndexedList).shuffle();
+    (this.$refs['activity-item'] as TextCarousel).shuffle();
+    (this.$refs['reason-item'] as TextCarousel).shuffle();
   }
 }
 </script>
@@ -103,5 +103,15 @@ button {
   &:hover {
     background-color: lighten($background-color, 10%);
   }
+}
+
+h1 {
+  font-size: 4em;
+}
+.item {
+  font-size: 2em;
+}
+#shuffle {
+  margin-top: 1em;
 }
 </style>
