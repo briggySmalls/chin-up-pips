@@ -1,6 +1,19 @@
 <template>
   <div id="app">
-    <Generator id="generator" />
+    <div>
+      <h1>Chin up Pips!</h1>
+      <IndexedList class="item" ref="activity-item" :options="activities" />
+      <p>
+        because
+      </p>
+      <IndexedList class="item" ref="reason-item" :options="reasons" />
+      <p>
+        you got this x
+      </p>
+      <button id="shuffle" @click="shuffle">
+        Give me another
+      </button>
+    </div>
     <div id="footer">
       Made with ❤ by <a href="https://github.com/briggysmalls">sam briggs</a>
     </div>
@@ -9,14 +22,31 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import Generator from './components/Generator.vue';
+import IndexedList from './components/IndexedList.vue';
+import * as data from './data/data.json';
 
 @Component({
   components: {
-    Generator,
+    IndexedList,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  private activities: string[];
+  private reasons: string[];
+
+  constructor() {
+    super();
+    // Load the data from the json file
+    this.activities = data.activities;
+    this.reasons = data.reasons;
+  }
+
+  shuffle(): void {
+    // Randomly update
+    (this.$refs['activity-item'] as IndexedList).shuffle();
+    (this.$refs['reason-item'] as IndexedList).shuffle();
+  }
+}
 </script>
 
 <style lang="scss">
@@ -47,6 +77,16 @@ a {
 
 #footer {
   margin-top: 5em;
+}
+
+h1 {
+  font-size: 4em;
+}
+.item {
+  font-size: 2em;
+}
+#shuffle {
+  margin-top: 1em;
 }
 
 button {
