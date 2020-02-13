@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-    <div>
+    <div id="main">
       <h1>Chin up Pips!</h1>
-      <TextCarousel class="item" ref="activity-item" :options="activities" />
+      <TextCarousel id="activity-item" class="item" ref="activity-item" :options="activities" />
       <p>
         because
       </p>
-      <TextCarousel class="item" ref="reason-item" :options="reasons" />
+      <TextCarousel id="reason-item" class="item" ref="reason-item" :options="reasons" />
       <p>
         you got this x
       </p>
@@ -55,63 +55,56 @@ $foreground-color: #ccc;
 
 body {
   background-color: $background-color;
-}
 
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: $foreground-color;
-
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-a {
-  color: $foreground-color;
-}
-
-#footer {
-  margin-top: 5em;
-}
-
-h1 {
-  font-size: 4em;
-}
-.item {
-  font-size: 2em;
-}
-#shuffle {
-  margin-top: 1em;
-}
-
-button {
-  border-radius: 5em;
-  border: 3px solid $foreground-color;
-  color: $foreground-color;
-  background-color: $background-color;
-  overflow: hidden;
-  padding: 1em 1em;
-  font-weight: bold;
-  font-size: 1.1em;
-  cursor: pointer;
-
-  &:hover {
-    background-color: lighten($background-color, 10%);
+  a {
+    color: $foreground-color;
   }
-}
 
-h1 {
-  font-size: 4em;
-}
-.item {
-  font-size: 2em;
-}
-#shuffle {
-  margin-top: 1em;
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: $foreground-color;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  button {
+    border-radius: 5em;
+    border: 3px solid $foreground-color;
+    color: $foreground-color;
+    background-color: $background-color;
+    overflow: hidden;
+    padding: 1em 1em;
+    font-weight: bold;
+    font-size: 1.1em;
+    cursor: pointer;
+
+    &:hover {
+      background-color: lighten($background-color, 10%);
+    }
+  }
+
+  h1 {
+    font-size: 4em;
+  }
+  .item {
+    font-size: 2em;
+  }
+  #reason-item {
+    transition-delay: 0.1s;
+  }
+  #shuffle {
+    margin-top: 1em;
+  }
+
+  #footer {
+    margin-top: 5em;
+  }
 }
 </style>
