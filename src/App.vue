@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-    <div>
+    <div id="main">
       <h1>Chin up Pips!</h1>
-      <IndexedList class="item" ref="activity-item" :options="activities" />
+      <TextCarousel id="activity-item" class="item" ref="activity-item" :options="activities" />
       <p>
         because
       </p>
-      <IndexedList class="item" ref="reason-item" :options="reasons" />
+      <TextCarousel id="reason-item" class="item" ref="reason-item" :options="reasons" />
       <p>
         you got this x
       </p>
@@ -22,12 +22,12 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import IndexedList from './components/IndexedList.vue';
+import TextCarousel from './components/TextCarousel.vue';
 import * as data from './data/data.json';
 
 @Component({
   components: {
-    IndexedList,
+    TextCarousel,
   },
 })
 export default class App extends Vue {
@@ -43,8 +43,8 @@ export default class App extends Vue {
 
   shuffle(): void {
     // Randomly update
-    (this.$refs['activity-item'] as IndexedList).shuffle();
-    (this.$refs['reason-item'] as IndexedList).shuffle();
+    (this.$refs['activity-item'] as TextCarousel).shuffle();
+    (this.$refs['reason-item'] as TextCarousel).shuffle();
   }
 }
 </script>
@@ -55,53 +55,56 @@ $foreground-color: #ccc;
 
 body {
   background-color: $background-color;
-}
 
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: $foreground-color;
+  a {
+    color: $foreground-color;
+  }
 
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: $foreground-color;
 
-a {
-  color: $foreground-color;
-}
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 
-#footer {
-  margin-top: 5em;
-}
+  button {
+    border-radius: 5em;
+    border: 3px solid $foreground-color;
+    color: $foreground-color;
+    background-color: $background-color;
+    overflow: hidden;
+    padding: 1em 1em;
+    font-weight: bold;
+    font-size: 1.1em;
+    cursor: pointer;
 
-h1 {
-  font-size: 4em;
-}
-.item {
-  font-size: 2em;
-}
-#shuffle {
-  margin-top: 1em;
-}
+    &:hover {
+      background-color: lighten($background-color, 10%);
+    }
+  }
 
-button {
-  border-radius: 5em;
-  border: 3px solid $foreground-color;
-  color: $foreground-color;
-  background-color: $background-color;
-  overflow: hidden;
-  padding: 1em 1em;
-  font-weight: bold;
-  font-size: 1.1em;
-  cursor: pointer;
+  h1 {
+    font-size: 4em;
+  }
+  .item {
+    font-size: 2em;
+  }
+  #reason-item {
+    transition-delay: 0.1s;
+  }
+  #shuffle {
+    margin-top: 1em;
+  }
 
-  &:hover {
-    background-color: lighten($background-color, 10%);
+  #footer {
+    margin-top: 5em;
   }
 }
 </style>
