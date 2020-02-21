@@ -28,15 +28,6 @@ import TextCarousel from './components/TextCarousel.vue';
 import * as data from './data/data.json';
 
 @Component({
-  metaInfo() {
-    return {
-      title: "Chin up pips!",
-      meta: [
-        { name: "description", content: "A gentle reminder to someone that they're exceptional" },
-        { name: "author", content: "Sam Briggs" },
-      ]
-    }
-  },
   components: {
     TextCarousel,
   },
