@@ -26,8 +26,12 @@ export default class TextCarousel extends Vue {
   }
 
   continueShuffle() {
-    // Get random integer
-    this.index = Math.floor(Math.random() * this.options.length);
+    // Get a new index at random (no repeats)
+    let newIndex = this.index;
+    while (newIndex == this.index) {
+      newIndex = Math.floor(Math.random() * this.options.length);
+    }
+    this.index = newIndex;
     // Reveal again
     this.show = true;
   }
