@@ -99,9 +99,15 @@ body {
       font-weight: bold;
       font-size: 1.1em;
       cursor: pointer;
+      box-shadow: 0 0.3em #666;
 
       &:hover {
         background-color: lighten($background-color, 10%);
+      }
+
+      &:active {
+        box-shadow: 0 0.1em #666;
+        transform: translateY(0.2em);
       }
     }
 
